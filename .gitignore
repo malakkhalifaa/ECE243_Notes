@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Nested repo (optional: remove to track ECE243 contents)
+ECE243/
+
+# Misc
+*.o
+*.out
