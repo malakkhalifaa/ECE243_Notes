@@ -82,7 +82,7 @@ _start:  la   t0, value
 value:   .word 0x12345678
 ```
 
-**8.** Why can `lw` “crash” if the address is not 4-byte aligned?
+**8.** Why can `lw` "crash" if the address is not 4-byte aligned?
 - _______________________
 
 ---
@@ -103,7 +103,7 @@ Use the correct directive for alignment.
 
 ## Part E: Find the bug
 
-**11.** Someone wrote this and said “when my_sub returns, it goes to the wrong place.” Why?
+**11.** Someone wrote this and said "when my_sub returns, it goes to the wrong place." Why?
 
 ```asm
 helper:  add  a0, a0, 1
@@ -111,7 +111,7 @@ helper:  add  a0, a0, 1
          ret
 ```
 
-**12.** This is supposed to load the word at `data_word` into `t2`. What’s wrong?
+**12.** This is supposed to load the word at `data_word` into `t2`. What's wrong?
 
 ```asm
 .data
@@ -127,10 +127,10 @@ data_word: .word 0x99aabbcc
 
 **13.** In one sentence: why do we save `ra` on the stack before a subroutine calls another subroutine?
 
-**14.** What two things make a piece of code a “subroutine” (how we enter and how we leave)?
+**14.** What two things make a piece of code a "subroutine" (how we enter and how we leave)?
 - Enter: _______________________
 - Leave: _______________________
 
 ---
 
-*When you’re done, check **L7_Code_Practice_ANSWERS.md**.*
+*When you're done, check **L7_Practice_Questions_With_Answers.md** in this folder for detailed answers to similar questions and more lecture-based practice.*
