@@ -1,6 +1,46 @@
 # Lecture 7 — Practice Questions (Answers Under Each Question)
 
-All questions are based on lecture content: subroutines, `pc`, `ra`, `call`, `ret`, stack, `.text`/`.data`/`.align`.
+All questions are based on **ECE 243 Lecture #7**: subroutines, subroutine linkage, parameter passing, stack intro, `pc`, `ra`, `call`, `ret`, `.text`/`.data`/`.align`, and lecture notes (e.g. Note 1, Note 2, CPUlator).
+
+---
+
+## 0a. Lecture: Two questions subroutines must solve
+
+**Q:** In the C example with `my_sub(3)` and `my_sub(4)`, the lecture says we must answer two questions in assembly. What are they?
+
+**A:**  
+1. **How does the return statement know where to “go back to”?** — There are **two different places** `my_sub` was called from, so we need two different return addresses.  
+2. **How do the parameters (3, 4) get to `my_sub` and into variable `p`?**  
+In C we don’t think about this; in assembly we handle both explicitly (return address in `ra`, parameters in a register like `a0`).
+
+---
+
+## 0b. Lecture: Note 1 and Note 2 (.data and .align)
+
+**Q:** What does **Note 1** say about `.align`? What does **Note 2** say about `.align 2`?
+
+**A:**  
+- **Note 1:** You **must use the `.data` assembler directive** for **`.align`** to work (see example 7-4). So `.align` is used in the data section, and we need a `.data` before it.  
+- **Note 2:** **`.align 2`** means align to **4-byte address / word boundaries** — it’s the **power of 2**: 2² = 4. So `.align 2` does **not** mean “2 bytes”; it means **4 bytes**.
+
+---
+
+## 0c. Lecture: CPUlator and pc
+
+**Q:** In CPUlator, what does the program counter display show? When does the processor do `pc ← pc + 4`?
+
+**A:** In CPUlator, the **program counter** shows the **address of the next instruction** that will be **single-stepped** — i.e. **before** that instruction executes. **Very soon after** execution of an instruction **begins**, the processor does **pc ← pc + 4** (so the next instruction is the one at the next word).
+
+---
+
+## 0d. Lecture Q&A: What makes my_sub a subroutine?
+
+**Q:** (From the lecture.) What makes `my_sub` a subroutine? Give the two points from the lecture answer.
+
+**A:**  
+1. You **jump** to it with a **`call`** instruction (not a plain jump).  
+2. It has a **`ret`** instruction.  
+So: enter with `call`, exit with `ret`.
 
 ---
 
